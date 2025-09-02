@@ -29,3 +29,30 @@ const incrementEvens = arrElement.filter(e => e % 2 == 0) //keeps only even numb
 
 console.log(incrementEvens);
 
+/* reduce is more powerful: you can do filtering, mapping, and accumulation all in one go.
+
+Example: Increment every number and build a new array: */
+
+const incremented = arrElement.reduce((acc, e) => {
+    acc.push(e + 1); //transform and add to result
+    return acc;
+}, []);
+
+console.log(incremented);
+
+// sum of all array elements 1,2,3,4,5
+const sumArray = arrElement.reduce((sum, e) => {
+    sum += e;
+    return sum;
+}, 0);
+
+
+console.log("SUM of an Array", sumArray);
+
+// sum of all array even elements
+const sumEvenArray = arrElement.reduce((sumEven, e) => {
+    e % 2 == 0 ? sumEven += e : sumEven;
+    return sumEven;
+}, 0);
+
+console.log("SUM of an Even Array:", sumEvenArray);

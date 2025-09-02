@@ -20,3 +20,12 @@ arrElement.map(e => e + 1) //transform each element
 
 // Using modern features (spread + array methods)
 
+console.log(...arrElement.map(e => e + 1));
+
+// Suppose we want to increment only the even numbers
+
+const incrementEvens = arrElement.filter(e => e % 2 == 0) //keeps only even number
+    .map(e => e + 1);
+
+console.log(incrementEvens);
+

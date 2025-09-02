@@ -75,3 +75,40 @@ console.log("Awesome Task: ", taskSum);
 
 /* You can think of this as a data pipeline:
 Original array → filter (select) → map (transform) → reduce (aggregate). */
+
+/* Task 2
+Scenario: E-commerce Orders
+
+You have a list of customer orders.
+Each order has:
+
+id
+
+customer
+
+amount
+
+status ("completed" or "pending")
+
+👉 Task:
+
+Keep only completed orders.
+
+Add 10% tax to each order amount.
+
+Find the total revenue.
+*/
+
+const orders = [
+    { id: 1, customer: "Alice", amount: 250, status: "completed" },
+    { id: 2, customer: "Bob", amount: 150, status: "pending" },
+    { id: 3, customer: "Charlie", amount: 400, status: "completed" },
+    { id: 4, customer: "Diana", amount: 100, status: "completed" },
+    { id: 5, customer: "Evan", amount: 300, status: "pending" },
+];
+
+const taskOutput = orders.filter((e) => e.status === "completed").map((e) => e.amount * 1.1).reduce((revenue, e) => {
+    return revenue += e;
+}, 0);
+
+console.log("task output:", taskOutput);

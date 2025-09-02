@@ -56,3 +56,22 @@ const sumEvenArray = arrElement.reduce((sumEven, e) => {
 }, 0);
 
 console.log("SUM of an Even Array:", sumEvenArray);
+
+/* Task
+Keep only the even numbers.
+
+Increment each by 1.
+
+Find the sum of the resulting numbers.
+*/
+
+const taskArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const taskSum = taskArray.filter((e) => e % 2 === 0).map((e) => e + 1).reduce((sum, e) => {
+    return sum += e;
+}, 0);
+
+console.log("Awesome Task: ", taskSum);
+
+/* You can think of this as a data pipeline:
+Original array → filter (select) → map (transform) → reduce (aggregate). */

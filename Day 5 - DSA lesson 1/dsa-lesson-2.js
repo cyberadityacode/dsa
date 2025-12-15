@@ -20,3 +20,21 @@ const arr2 = [1, 3, 5, 4, 4];
 
 console.log(findPairs(arr));
 console.log(findPairs(arr2));
+
+// Optimized Version (Best Practice – O(n))
+
+function findPairsOptimized(arr) {
+  const seen = new Set();
+  const pairs = [];
+
+  for (let num of arr) {
+    if (seen.has(num)) {
+      pairs.push([num, num]);
+    } else {
+      seen.add(num);
+    }
+  }
+  return pairs;
+}
+
+console.log(findPairs([1, 2, 3, 3, 4]));

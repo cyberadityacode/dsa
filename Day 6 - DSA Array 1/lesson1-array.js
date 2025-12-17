@@ -34,3 +34,42 @@ I guessed time complexity as O(n) but its incorrect
  This is what we call a "hidden complexity" error.
  While it looks like a single loop, the actual complexity is $O(n^2)$ (Quadratic).
 */
+
+/* 
+Why is it $O(n^2)?
+To find the total complexity, 
+we have to look at what is happening inside the loop.The Loop: 
+You are right that the for loop runs $n times. 
+That is $O(n)$.The Method: Inside that loop, you are calling .unshift(). 
+
+As we discussed, .unshift() is an $O(n)$ operation 
+because it has to move every single existing element in newArray to the right 
+to make room at the front.
+
+When you put an $O(n)$ operation inside an $O(n)$ loop, 
+you multiply them:$$n (\text{loop}) \times n (\text{unshift}) = n^2
+*/
+
+/* 
+The "Expert" Way to Fix It
+If we want to become experts, we need to achieve this in Linear Time ($O(n)$). 
+We can do this by avoiding .unshift() and using .push() instead, which is $O(1)$.
+*/
+
+console.time();
+function reverseArrayExpert(arr) {
+  let newArray = [];
+  for (let i = arr.length; i >= 0; i--) {
+    newArray.push(arr[i]); //push() is O(n)
+  }
+  return newArray;
+}
+console.timeEnd();
+console.log("Expert Reverse Array ", reverseArrayExpert(sampleArray));
+
+/* 
+Loop: $n iterations.
+Inside: $O(1) operation.
+
+Total: $O(n) Much faster!
+*/

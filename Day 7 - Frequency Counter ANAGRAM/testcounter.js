@@ -34,3 +34,21 @@ function frequencyCounterReduce(str) {
   }, {});
 }
 console.log("Testing Reduce ", frequencyCounterReduce("aditya"));
+
+// using professional /best practice (production ready)
+
+function proFrequencyCounter(str) {
+  if (typeof str !== "string" || str.length === 0) {
+    return {};
+  }
+
+  const freq = Object.create(null); //avoids prototype pollution
+
+  for (const char of str) {
+    freq[char] = (freq[char] || 0) + 1;
+  }
+
+  return freq;
+}
+console.log("hello");
+console.log(proFrequencyCounter("hello"));

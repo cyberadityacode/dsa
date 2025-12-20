@@ -12,8 +12,13 @@ function testFrequncyCounter(str) {
   debugger;
   const freq = {};
 
-  for (let i = 0; i < str.length; i++) {
+  /*   for (let i = 0; i < str.length; i++) {
     const char = str[i];
+    freq[char] = (freq[char] || 0) + 1;
+  } */
+
+  for (const char of str) {
+    //cleaner ES6
     freq[char] = (freq[char] || 0) + 1;
   }
   return freq;
@@ -21,3 +26,11 @@ function testFrequncyCounter(str) {
 
 console.log("Function Passing string ", testFrequncyCounter("aditya"));
 console.log("Function Passing number ", testFrequncyCounter(7));
+
+function frequencyCounterReduce(str) {
+  return [...str].reduce((acc, char) => {
+    acc[char] = (acc[char] || 0) + 1;
+    return acc;
+  }, {});
+}
+console.log("Testing Reduce ", frequencyCounterReduce("aditya"));

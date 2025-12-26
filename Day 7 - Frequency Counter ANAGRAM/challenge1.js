@@ -27,3 +27,11 @@ function sameArray(arrA, arrB) {
 console.log("Length of Array A", sameArray([1, 2, 3], [1, 4, 9]));
 
 console.info([1, 2, 3] == [1, 4, 9]); //condition will always return false, because JS compares Object by reference not by value
+
+console.info("TRY ", [1,2]==[1,2]); // false, because JS compares object by reference not by value
+console.info("EMPTY ARRAY COMPARE ", []==[]); // false, because JS compares object by reference not by value
+
+console.info("EMPTY STRING COMPARE ", ""===""); // true
+console.info("EMPTY STRING COMPARE different type quotes ", ""===''); // true
+console.info("EMPTY STRING COMPARE different type string literals ", ""===``); // true
+

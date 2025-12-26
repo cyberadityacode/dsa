@@ -58,3 +58,26 @@ function compareArray(firstArray, secondArray){
 
 
 console.log("Comparing two arrays using simple solution", compareArray([1,2,3], [1,2,3]));
+console.log("Comparing two arrays using simple solution", compareArray([1,2,3], [1,2,4]));
+
+
+// Modern & Concise (using every())
+
+/* 
+The Array.prototype.every() Method 
+The every() method is an array iteration method that tests whether all elements in the array pass the test implemented by a provided function. 
+Returns true: If the callback function returns a truthy value for all elements in the array.
+Returns false: If the callback function returns a falsy value for even one element, every() immediately stops iterating (short-circuits) and returns false.
+Does not change the original array. 
+*/
+
+
+function compareArrayModern(firstArray, secondArray){
+  return (
+    firstArray.length === secondArray.length && 
+    firstArray.every((value,index)=> value=== secondArray[index])
+  );
+}
+
+console.log("compare array modern", compareArray([1,2,3],[1,2,3]));
+console.log("compare array modern", compareArray([1,2,3],[1,2,4]));

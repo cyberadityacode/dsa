@@ -35,3 +35,26 @@ console.info("EMPTY STRING COMPARE ", ""===""); // true
 console.info("EMPTY STRING COMPARE different type quotes ", ""===''); // true
 console.info("EMPTY STRING COMPARE different type string literals ", ""===``); // true
 
+
+
+/* 
+First Task: compare two arrays, return true if both arrays are same
+*/
+
+
+// Clean Solution (Primitive values)
+function compareArray(firstArray, secondArray){
+  if(firstArray.length !== secondArray.length){
+    return false;
+  }
+
+  for(let i=0; i<firstArray.length;i++){
+    if(firstArray[i] !==secondArray[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+console.log("Comparing two arrays using simple solution", compareArray([1,2,3], [1,2,3]));

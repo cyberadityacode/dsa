@@ -81,3 +81,44 @@ function compareArrayModern(firstArray, secondArray){
 
 console.log("compare array modern", compareArray([1,2,3],[1,2,3]));
 console.log("compare array modern", compareArray([1,2,3],[1,2,4]));
+
+
+/* 
+Task 2: The "Squared" Array
+The Goal: Write a function called same, which accepts two arrays. 
+The function should return true 
+if every value in the array has its corresponding value squared in the second array.
+The frequency of values must be the same.
+
+Examples:
+
+same([1, 2, 3], [4, 1, 9]) ⮕ true
+
+same([1, 2, 3], [1, 9]) ⮕ false
+
+same([1, 2, 1], [4, 4, 1]) ⮕ false (must be the same frequency)
+*/
+
+// slice() is an array method that creates a new array by copying elements from an existing array.
+
+function squaredArrayCompare(firstArray, secondArray){
+  if(firstArray.length !== secondArray.length){
+    return false;
+  }
+
+  // sort both arrays
+  firstArray = firstArray.slice().sort((a,b)=>a-b);
+  secondArray = secondArray.slice().sort((a,b)=>a-b);
+  
+  for(let i=0; i<firstArray.length;i++){
+    if(firstArray[i]**2 !== secondArray[i]){
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log("SQUARED ARRAY COMPARE ", squaredArrayCompare([1,2,3], [1,4,9]));
+console.log("SQUARED ARRAY COMPARE ", squaredArrayCompare([1,2,3], [1,1,9]));
+console.log("SQUARED ARRAY COMPARE", squaredArrayCompare([1, 2, 1], [4, 4, 1])); // false

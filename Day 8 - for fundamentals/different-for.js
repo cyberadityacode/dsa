@@ -61,3 +61,26 @@ Cons:
 Iterates over all enumerable properties, including inherited ones.
 
 Not ideal for arrays because keys are strings ("0", "1") and order is not guaranteed. */
+
+// for Each method
+
+sampleArray.forEach((item, index)=> {
+    console.log(index, item);
+});
+
+// If you want to “do something” for every item and don’t need to stop early — use forEach().
+
+
+/* 
+forEach() is an array method in JavaScript that executes 
+a provided callback function once for each element of the array. 
+It is mainly used when we want to perform an action or 
+side effect on every array element and do not need a return value.
+*/
+
+/* 
+forEach() always returns undefined. It is not meant for transforming data. If we need a new array, we should use map(), filter(), or reduce()
+*/
+/* 
+forEach() does not support break, continue, or return to stop iteration. The loop always runs for all elements.
+*/

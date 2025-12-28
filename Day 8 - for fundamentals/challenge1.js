@@ -130,3 +130,6 @@ console.log(compareSquaredArrayUsingMapSort([1,2,3], [1,4,9]));
 console.log(compareSquaredArrayUsingMapSort([1,2,2,3], [1,4,4,9]));
 console.log(compareSquaredArrayUsingMapSort([1,2,2,3], [1,4,4,10]));
 
+// Time complexity: O(n log n)
+
+// Still acceptable, but not optimal

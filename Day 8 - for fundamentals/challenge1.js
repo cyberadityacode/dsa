@@ -98,6 +98,8 @@ function compareSquaredArrayOptimized(arrayOne,arrayTwo){
     for(let val of arrayTwo){
         freq2[val] = (freq2[val] ||0 )+1;
     }
+    console.log("FREQ 1 ", freq1);
+    console.log("FREQ 2 ", freq2);
 
     for(let key in freq1){
         const squared = key**2;
@@ -110,3 +112,21 @@ function compareSquaredArrayOptimized(arrayOne,arrayTwo){
 
 console.log(compareSquaredArrayOptimized([1,2,3], [1,4,9]));
 console.log(compareSquaredArrayOptimized([1,2,3], [1,4,8]));
+console.log(compareSquaredArrayOptimized([1,2,2,4], [1,4,4,16]));
+
+
+// Alternative “Cleaner” Solution (Using map + sort)
+
+function compareSquaredArrayUsingMapSort(arrayOne,arrayTwo){
+    if(arrayOne.length !== arrayTwo.length) return false;
+
+    const squared = arrayOne.map(x=>x**2).sort((a,b)=>a-b);
+    const sortedArray2 = [...arrayTwo].sort((a,b)=>a-b);
+
+    return squared.every((val,index)=> val === sortedArray2[index]);
+}
+
+console.log(compareSquaredArrayUsingMapSort([1,2,3], [1,4,9]));
+console.log(compareSquaredArrayUsingMapSort([1,2,2,3], [1,4,4,9]));
+console.log(compareSquaredArrayUsingMapSort([1,2,2,3], [1,4,4,10]));
+

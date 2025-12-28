@@ -11,3 +11,5 @@ function constantSum(numberOfElements) {
 }
 
 console.log(constantSum(10));
+
+// A great developer can turn a linear problem into a constant-time problem.

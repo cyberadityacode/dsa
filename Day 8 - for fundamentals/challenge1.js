@@ -83,3 +83,30 @@ I look for its squared value in the second array.
 */
 
 
+function compareSquaredArrayOptimized(arrayOne,arrayTwo){
+    if(arrayOne.length !== arrayTwo.length){
+        return false;
+    }
+
+    const freq1 = {};
+    const freq2 = {};
+
+    for(let val of arrayOne){
+        freq1[val] = (freq1[val] ||0)+1;
+    }
+
+    for(let val of arrayTwo){
+        freq2[val] = (freq2[val] ||0 )+1;
+    }
+
+    for(let key in freq1){
+        const squared = key**2;
+        if(!(squared in freq2)) return false;
+        if(freq2[squared] !==freq1[key]) return false;
+    }
+
+    return true;
+}
+
+console.log(compareSquaredArrayOptimized([1,2,3], [1,4,9]));
+console.log(compareSquaredArrayOptimized([1,2,3], [1,4,8]));

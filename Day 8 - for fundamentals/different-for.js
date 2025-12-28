@@ -16,3 +16,23 @@ for(let i=0;i<sampleArray.length;i++){
 }
 
 
+// for...of loop
+/* 
+Works on: Iterables like arrays, strings, Sets, Maps.
+
+Use case: When you just want values from an iterable and don’t care about the index.
+
+Pros: Clean syntax, works for any iterable.
+
+Cons: Cannot directly get the index unless you use array.entries().
+*/
+
+for(const item of sampleArray){
+    console.log(item);
+}
+
+// to access index using for ..of then use array.entries()
+for(const [index,value] of sampleArray.entries()){
+    console.log(index, value);
+}
+

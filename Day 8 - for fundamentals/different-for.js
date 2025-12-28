@@ -36,3 +36,28 @@ for(const [index,value] of sampleArray.entries()){
     console.log(index, value);
 }
 
+const sampleObject = {name:"aditya", message:"hello"};
+/* 
+you can't use for...of for object iteration : TypeError: sampleObject is not iterable
+*/
+/* for(const item of sampleObject){ 
+    console.log(sampleObject[item]);
+} */
+
+
+// for...in loop
+for(const key in sampleObject){
+    console.log(key, sampleObject[key]);
+}
+
+/* Works on: Objects (enumerable properties), also arrays (but not recommended for arrays!)
+
+Use case: When you want keys of an object.
+
+Pros: Easy to iterate object properties.
+
+Cons:
+
+Iterates over all enumerable properties, including inherited ones.
+
+Not ideal for arrays because keys are strings ("0", "1") and order is not guaranteed. */

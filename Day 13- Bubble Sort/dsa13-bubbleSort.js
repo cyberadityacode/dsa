@@ -36,3 +36,5 @@ function bubbleSortOptimized(sampleArray){
 }
 console.timeEnd();
 console.log(bubbleSortOptimized(sampleArray));
+
+console.log("hello");

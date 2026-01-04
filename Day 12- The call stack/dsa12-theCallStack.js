@@ -54,4 +54,18 @@ This function doesn't care if the array is nested 2 times or 200 times. It will 
 */
 
 
-// experiment using existing function
+// nested array sum experiment using reduce
+
+const sumArrayBase = (arr)=> arr.reduce((acc,ele)=> acc+=ele,0);
+
+console.log(sumArrayBase([10, 20, 30])); //60
+
+const sumDeepArray = (arr) =>
+    arr.reduce(
+        (acc,ele)=>
+            Array.isArray(ele)
+                ? acc + sumDeepArray(ele)
+                : acc + ele,
+            0
+    );
+console.log(sumDeepArray([10,[20,[30,40]]])); //100

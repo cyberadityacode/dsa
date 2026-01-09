@@ -24,3 +24,68 @@ console.log(sumArray(sampleArray));
 
 const sumArrayReduce = (arr)=> arr.reduce((acc,element)=> acc+=element,0);
 console.log(sumArrayReduce(sampleArray))
+
+
+/* 
+2️ Find the Largest Number
+
+Concepts: comparison, iteration
+
+Problem:
+Given an array of numbers, return the largest value.
+*/
+
+// Input
+let secondArray = [3, 7, 2, 9, 4];
+
+// Output
+// 9
+
+
+
+/* 
+3️⃣ Count Occurrences of a Value
+
+Concepts: counting, equality checks
+
+Problem:
+Given an array and a value, return how many times that value appears.
+
+// Input
+([1, 2, 2, 3, 2], 2)
+
+// Output
+3
+
+*/
+
+
+/* 
+4️⃣ Reverse an Array (Without Built-in Reverse)
+
+Concepts: indexing, array creation
+
+Problem:
+Return a new array that is the reverse of the input.
+
+// Input
+[1, 2, 3, 4]
+
+// Output
+[4, 3, 2, 1]
+
+*/
+
+/* 
+5️⃣ Check if Array is Sorted (Ascending)
+
+Concepts: adjacent comparison, early exit
+
+Problem:
+Return true if the array is sorted in ascending order, otherwise false.
+
+// Input
+[1, 2, 3, 4]   → true
+[1, 3, 2, 4]   → false
+https://chatgpt.com/c/695d2310-ca00-8331-88e3-10c310b2c245
+*/

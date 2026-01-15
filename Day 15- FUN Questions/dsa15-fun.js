@@ -118,6 +118,10 @@ function reverseArray(sampleArray){
     return newArray;
 }
 console.log("Reverse Array : ", reverseArray([1, 2, 3, 4]));
+
+const reverseArrayReduce = arr => arr.reduce((a,b)=> [b,...a],[]);
+
+console.log("Reverse Array Reduce: ", reverseArrayReduce([1, 2, 3, 4]));
 /* 
 5️⃣ Check if Array is Sorted (Ascending)
 

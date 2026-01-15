@@ -134,7 +134,6 @@ Return true if the array is sorted in ascending order, otherwise false.
 // Input
 [1, 2, 3, 4]   → true
 [1, 3, 2, 4]   → false
-https://chatgpt.com/c/695d2310-ca00-8331-88e3-10c310b2c245
 */
 function isArraySorted(arr){
     if(!Array.isArray(arr)) return false;

@@ -58,3 +58,45 @@ and you reach for a for loop ($O(n)$), you are acting like a novice.
 If you reach for Binary Search ($O(\log n)$), you are acting like an expert.
 */
 
+
+/* 
+That is a very sharp question to focus on. Most bugs in Binary Search happen exactly at that boundary condition.
+
+The reason we use left <= right (Less than OR Equal to) is to handle the case where the search area has narrowed down to exactly one element.
+
+The "One Element" Scenario
+Imagine you are looking for the number 7 in an array that only has one item: [7].
+
+left index is 0.
+
+right index is 0.
+
+If we used while (left < right):
+
+The computer checks: Is 0 < 0?
+
+The answer is False.
+
+The loop never starts, and the function returns -1 (Not Found).
+
+Result: Your code failed to find a number that was actually there!
+
+If we use while (left <= right):
+
+The computer checks: Is 0 <= 0?
+
+The answer is True.
+
+The loop runs, calculates mid = 0, sees that arr[0] is 7, and successfully returns the index.
+
+The Expert Mental Model: "The Shrinking Window"
+Think of left and right as the walls of a room.
+
+As long as left < right, the room has space in it.
+
+When left === right, the room has shrunk down to a single point (one element). We still need to check that point!
+
+When left > right, the walls have crossed over each other—the room has effectively disappeared. 
+This is when we know for sure the target isn't there.
+
+*/

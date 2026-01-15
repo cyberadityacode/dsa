@@ -38,6 +38,19 @@ Given an array of numbers, return the largest value.
 // Input
 let secondArray = [3, 7, 2, 9, 4];
 
+function largestValue(secondArray){
+    if(!Array.isArray(secondArray)) return false;
+    let max = secondArray[0];
+    for(let i=1;i<secondArray.length;i++){
+        if(secondArray[i]>max){
+            max = secondArray[i];
+        }
+    }
+    return max;
+}
+
+console.log("Larget Value of an Array is : ", largestValue(secondArray));
+
 // Output
 // 9
 

@@ -86,7 +86,13 @@ function elementOccurrence(arr,element){
 }
 
 console.log("Element Occurence : ", elementOccurrence([1, 2, 2, 3, 2], 2));
+// Using Filter
 
+
+console.log(
+  "Element Occurrence Filter:",
+  ((arr, el) => arr.filter(x => x === el).length)([1, 2, 2, 3, 2], 2)
+);
 /* 
 4️⃣ Reverse an Array (Without Built-in Reverse)
 

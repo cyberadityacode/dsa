@@ -123,7 +123,8 @@ const reverseArrayReduce = arr => arr.reduce((a,b)=> [b,...a],[]);
 
 console.log("Reverse Array Reduce: ", reverseArrayReduce([1, 2, 3, 4]));
 /* 
-5️⃣ Check if Array is Sorted (Ascending)
+
+5️. Check if Array is Sorted (Ascending)
 
 Concepts: adjacent comparison, early exit
 
@@ -135,3 +136,19 @@ Return true if the array is sorted in ascending order, otherwise false.
 [1, 3, 2, 4]   → false
 https://chatgpt.com/c/695d2310-ca00-8331-88e3-10c310b2c245
 */
+function isArraySorted(arr){
+    if(!Array.isArray(arr)) return false;
+    if(arr.length <= 1) return true;
+
+   
+    for(let i=1;i<arr.length;i++){
+        if(arr[i-1] > arr[i]){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log("Array Sorted or not :", isArraySorted([1,2,3,4]));
+console.log("Array Sorted or not :", isArraySorted([1,8,3,4]));

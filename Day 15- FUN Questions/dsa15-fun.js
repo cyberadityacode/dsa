@@ -60,7 +60,7 @@ console.log("Largest Value of an Array using Reduce:", largestValueReduce );
 
 
 /* 
-3️⃣ Count Occurrences of a Value
+3️. Count Occurrences of a Value
 
 Concepts: counting, equality checks
 
@@ -74,7 +74,18 @@ Given an array and a value, return how many times that value appears.
 3
 
 */
+function elementOccurrence(arr,element){
+    if(!Array.isArray(arr)) return false;
+    let count = 0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===element){
+            count++;
+        }
+    }
+    return count;
+}
 
+console.log("Element Occurence : ", elementOccurrence([1, 2, 2, 3, 2], 2));
 
 /* 
 4️⃣ Reverse an Array (Without Built-in Reverse)

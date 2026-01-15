@@ -94,7 +94,7 @@ console.log(
   ((arr, el) => arr.filter(x => x === el).length)([1, 2, 2, 3, 2], 2)
 );
 /* 
-4️⃣ Reverse an Array (Without Built-in Reverse)
+4️. Reverse an Array (Without Built-in Reverse)
 
 Concepts: indexing, array creation
 
@@ -108,7 +108,16 @@ Return a new array that is the reverse of the input.
 [4, 3, 2, 1]
 
 */
+function reverseArray(sampleArray){
+    if(!Array.isArray(sampleArray)) return false;
 
+    let newArray =[];
+    for(let i=sampleArray.length-1;i>=0;i--){
+        newArray.push(sampleArray[i]);
+    }
+    return newArray;
+}
+console.log("Reverse Array : ", reverseArray([1, 2, 3, 4]));
 /* 
 5️⃣ Check if Array is Sorted (Ascending)
 

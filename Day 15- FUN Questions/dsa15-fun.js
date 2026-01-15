@@ -51,6 +51,9 @@ function largestValue(secondArray){
 
 console.log("Larget Value of an Array is : ", largestValue(secondArray));
 
+
+const largestValueReduce = secondArray.reduce((a,b)=> a>b? a:b);
+console.log("Largest Value of an Array using Reduce:", largestValueReduce );
 // Output
 // 9
 
